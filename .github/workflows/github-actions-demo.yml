@@ -28,4 +28,4 @@ jobs:
       - run: id
       - run: sudo apt update -y
       - run: sudo apt install -y python3-dev
-      - run: sudo pip3 isntall fastai
+      - run: sudo pip3 install fastai
