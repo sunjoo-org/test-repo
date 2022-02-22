@@ -1,5 +1,11 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+  workflow_call:
+    agent_name:
+      default: 'f15'
+      type: string
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: sunjoo_linux
@@ -20,3 +26,4 @@ jobs:
     steps:
       - run: hostname
       - run: uname -a
+      - run: echo ${{ inputs.agent_name }}
