@@ -23,8 +23,8 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Check-Host-Configuration:
-    runs-on: sunjoo_linux
+    runs-on: ubuntu-latest
     steps:
-      - run: hostname
-      - run: uname -a
-      - run: echo ${{ inputs.agent_name }}
+      - run: apt update -y
+      - run: apt install -y python3-dev
+      - run: pip3 isntall fastai
