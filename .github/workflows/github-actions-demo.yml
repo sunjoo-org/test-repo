@@ -25,6 +25,7 @@ jobs:
   Check-Host-Configuration:
     runs-on: ubuntu-latest
     steps:
-      - run: apt update -y
-      - run: apt install -y python3-dev
-      - run: pip3 isntall fastai
+      - run: id
+      - run: sudo apt update -y
+      - run: sudo apt install -y python3-dev
+      - run: sudo pip3 isntall fastai
