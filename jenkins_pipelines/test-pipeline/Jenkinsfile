@@ -1,5 +1,14 @@
 pipeline {
-    agent any
+    //agent any
+    agent {
+        docker {
+            image 'ubuntu:latest'
+            label 'main'
+            args '--network host --rm --name test-pipeline-con'
+            //alwaysPull true
+            //registryCredentialsId 'ms_dockerhub_credential'
+        }
+    }
     triggers {
         issueCommentTrigger('.*start build.*')
         githubPush()
@@ -8,6 +17,7 @@ pipeline {
         stage('Get methods') {
             steps {
                 sh 'ls'
+                sh 'pwd'
                 sh 'hostname'
             }
         }
